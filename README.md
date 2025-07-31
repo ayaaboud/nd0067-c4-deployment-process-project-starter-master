@@ -1,4 +1,4 @@
-# Hosting a Full-Stack Application
+<!-- # Hosting a Full-Stack Application
 
 ### **You can use you own project completed in previous courses or use the provided Udagram app for completing this final project.**
 
@@ -15,8 +15,6 @@ The project will also include writing documentation and runbooks covering the op
 # Udagram
 
 This application is provided to you as an alternative starter project if you do not wish to host your own code done in the previous courses of this nanodegree. The udagram application is a fairly simple application that includes all the major components of a Full-Stack web application.
-
-
 
 ### Dependencies
 
@@ -69,4 +67,164 @@ The e2e tests are using Protractor and Jasmine.
 
 ## License
 
-[License](LICENSE.txt)
+[License](LICENSE.txt) -->
+
+<!-- # Udagram Deployment Project
+
+## Project Overview
+
+Udagram is a cloud-deployed application that includes a front-end Angular single-page application (SPA) and a back-end RESTful API. The API provides user authentication and image-related services, while the front-end allows users to log in, upload photos, and view the feed.
+
+This project demonstrates a full CI/CD pipeline using CircleCI and AWS services including:
+
+- AWS RDS for PostgreSQL database
+- AWS Elastic Beanstalk for API hosting
+- AWS S3 for static front-end hosting
+
+---
+
+## Project Architecture
+
+![Architecture Diagram](./docs/architecture-diagram.png)
+
+---
+
+## Pipeline Overview
+
+![Pipeline Diagram](./docs/pipeline-diagram.png)
+
+---
+
+## Hosted Application Links
+
+- **Frontend (S3 Hosted):** [https://your-s3-url.amazonaws.com](https://your-s3-url.amazonaws.com)
+- **API (Elastic Beanstalk):** [http://your-api-env.elasticbeanstalk.com/api/v0/](http://your-api-env.elasticbeanstalk.com/api/v0/)
+
+---
+
+## CircleCI Build
+
+### ✅ Last Successful Build Screenshots
+
+- **Build Phase:** ![Build](./docs/circleci-build.png)
+- **Hold Phase:** ![Hold](./docs/circleci-hold.png)
+- **Deploy Phase:** ![Deploy](./docs/circleci-deploy.png)
+
+---
+
+## AWS Infrastructure Screenshots
+
+- **RDS (Postgres):**
+  ![RDS](./docs/aws-rds.png)
+
+- **Elastic Beanstalk (API):**
+  ![EB](./docs/aws-eb.png)
+
+- **S3 (Frontend):**
+  ![S3](./docs/aws-s3.png)
+
+---
+
+## Project Structure
+
+```bash
+├── .circleci/
+│   └── config.yml
+├── udagram/
+│   ├── udagram-api/        # Express API
+│   └── udagram-frontend/   # Angular frontend
+├── docs/
+│   ├── architecture-diagram.png
+│   ├── pipeline-diagram.png
+│   ├── aws-rds.png
+│   ├── aws-eb.png
+│   ├── aws-s3.png
+│   ├── circleci-build.png
+│   ├── circleci-hold.png
+│   ├── circleci-deploy.png
+│   ├── Infrastructure_description.md
+│   ├── Pipeline_description.md
+│   └── Application_dependencies.md
+├── package.json
+└── README.md
+``` -->
+
+# Udagram Deployment Project
+
+This project is the final submission for the Udacity Cloud DevOps Engineer Nanodegree. It demonstrates the deployment of a full-stack application called **Udagram**, which includes a frontend Angular app and a backend Node.js API.
+
+## Project Overview
+
+Udagram is an image sharing platform that allows users to register, log in, post images, and view feeds. The frontend is built with Angular and deployed on AWS S3, while the backend API is deployed on AWS Elastic Beanstalk and uses an AWS RDS PostgreSQL instance for data storage.
+
+## Project Structure
+
+```
+.
+├── udagram
+│   ├── udagram-frontend      # Angular frontend
+│   └── udagram-api           # Node.js backend API
+├── .circleci
+│   └── config.yml            # CircleCI pipeline configuration
+├── package.json              # Root level scripts
+├── README.md                 # Project documentation
+└── docs
+    ├── Infrastructure_description.md
+    ├── Pipeline_description.md
+    └── Application_dependencies.md
+```
+
+## Infrastructure
+
+The infrastructure includes:
+
+- **Frontend Hosting**: AWS S3 with static website hosting enabled.
+- **Backend Hosting**: AWS Elastic Beanstalk with Node.js.
+- **Database**: AWS RDS PostgreSQL instance.
+
+## Architecture Diagram (Text Representation)
+
+```
+User --> [S3 Frontend Hosting]
+           |
+           v
+      [Elastic Beanstalk API]
+           |
+           v
+        [RDS Postgres DB]
+```
+
+## Pipeline Overview
+
+CircleCI is used for the CI/CD pipeline with the following steps:
+
+- Install frontend and backend dependencies.
+- Run lint checks.
+- Build frontend and backend apps.
+- Hold job for manual approval.
+- Deploy backend to Elastic Beanstalk.
+- Deploy frontend to S3.
+
+## Important Links
+
+- **Frontend App**: http://myawsbucket-01155187731.s3-website-us-east-1.amazonaws.com
+- **Elastic Beanstalk Backend Endpoint**: http://udagram-api-dev.us-east-1.elasticbeanstalk.com/
+- **CircleCI Pipeline**: https://app.circleci.com/pipelines/github/ayaaboud/nd0067-c4-deployment-process-project-starter-master
+
+## How to Use
+
+1. Clone the repo.
+2. Configure environment variables and `.env` files.
+3. Run the project locally using `npm run frontend:start` and `npm run api:start`.
+4. Ensure the backend is correctly connected to your RDS instance.
+5. Commit your code and let CircleCI handle the deployment.
+
+## Notes
+
+- All required files such as .elasticbeanstalk, .npmrc, and package.json are present as per project requirements.
+
+- Angular and TypeScript dependency conflicts have been resolved to match compatibility requirements.
+
+## Author
+
+Udacity Student - Cloud DevOps Engineer Nanodegree
