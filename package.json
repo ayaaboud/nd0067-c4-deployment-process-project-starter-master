@@ -22,6 +22,6 @@
     "deploy": "npm run build && eb list && eb use udagram-api-dev && eb deploy",
     "ng": "ng",
     "lint": "ng lint",
-    "build": "npm install . && npm run clean && tsc && cp -rf src/config www/config && cp -R .elasticbeanstalk www/.elasticbeanstalk && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd .."
+    "build": "npm install . && npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd .."
   }
 }
