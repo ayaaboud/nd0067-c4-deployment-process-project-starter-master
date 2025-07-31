@@ -1,0 +1,9 @@
+{
+  "name": "udagram",
+  "version": "1.0.0",
+  "scripts": {
+    "install": "cd udagram-frontend && npm install && cd ../udagram-api && npm install",
+    "start:frontend": "cd udagram-frontend && npm start",
+    "start:backend": "cd udagram-api && npm run dev"
+  }
+}
