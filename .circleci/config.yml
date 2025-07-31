@@ -72,7 +72,7 @@ jobs:
       - checkout
       - run:
           name: Deploy Backend
-          command: cd udagram-api && npm run deploy
+          command: cd udagram/udagram-api && npm run deploy
       - run:
           name: Deploy Frontend to S3
           command: ./udagram-frontend/bin/deploy.sh
