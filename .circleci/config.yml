@@ -30,8 +30,7 @@ jobs:
           command: npm run frontend:build
       - run:
           name: Build Backend
-          command: npm run backend:Build
-
+          command: npm run backend:build
   deploy:
     docker:
       - image: "cimg/base:stable"
