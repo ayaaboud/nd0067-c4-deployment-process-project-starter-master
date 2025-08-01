@@ -75,7 +75,7 @@ jobs:
           command: cd udagram/udagram-api && npm run deploy
       - run:
           name: Deploy Frontend to S3
-          command: ./udagram-frontend/bin/deploy.sh
+          command: ./udagram/udagram-frontend/bin/deploy.sh
       # - run:
       #     name: Deploy App
       #     # TODO: Install, build, deploy in both apps
