@@ -30,36 +30,8 @@ jobs:
           command: npm run frontend:build
       - run:
           name: Build Backend
-          command: npm run backend:build
-      # - run:
-      #     name: Install Front-End Dependencies
-      #     command: |
-      #       echo "NODE --version"
-      #       echo $(node --version)
-      #       echo "NPM --version"
-      #       echo $(npm --version)
-      #       npm run frontend:install
-      # # TODO: Install dependencies in the the backend API
-      # - run:
-      #     name: Install API Dependencies
-      #     command: |
-      #       echo "TODO: Install dependencies in the the backend API  "
-      # # TODO: Lint the frontend
-      # - run:
-      #     name: Front-End Lint
-      #     command: |
-      #       echo "TODO: Lint the frontend"
-      # # TODO: Build the frontend app
-      # - run:
-      #     name: Front-End Build
-      #     command: |
-      #       echo "TODO: Build the frontend app"
-      # # TODO: Build the backend API
-      # - run:
-      #     name: API Build
-      #     command: |
-      #       echo "TODO: Build the backend API"
-  # deploy step will run only after manual approval
+          command: npm run backend:Build
+
   deploy:
     docker:
       - image: "cimg/base:stable"
@@ -76,11 +48,6 @@ jobs:
       - run:
           name: Deploy Frontend to S3
           command: ./udagram/udagram-frontend/bin/deploy.sh
-      # - run:
-      #     name: Deploy App
-      #     # TODO: Install, build, deploy in both apps
-      #     command: |
-      #       echo "# TODO: Install, build, deploy in both apps"
 
 workflows:
   udagram:
