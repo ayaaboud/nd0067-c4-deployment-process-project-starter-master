@@ -42,6 +42,12 @@ jobs:
       - aws-cli/setup
       - checkout
       - run:
+          name: EB Init
+          command: |
+            cd udagram/udagram-api
+            eb init udagram-api --platform node.js --region $AWS_REGION
+
+      - run:
           name: Set environment variables on EB
           command: |
             eb setenv POSTGRES_HOST=$POSTGRES_HOST POSTGRES_DB=$POSTGRES_DB POSTGRES_USER=$POSTGRES_USER POSTGRES_PASSWORD=$POSTGRES_PASSWORD JWT_SECRET=$JWT_SECRET AWS_BUCKET=$AWS_BUCKET AWS_REGION=$AWS_REGION
