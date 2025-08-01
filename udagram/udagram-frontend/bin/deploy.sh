@@ -4,5 +4,6 @@ cd udagram/udagram-frontend
 npm install
 npm run build
 
-aws s3 cp --recursive --acl public-read ./www s3://myawsbucket-01155187731/
+aws s3 cp --recursive --acl public-read ./www s3://$AWS_BUCKET/
+# aws s3 cp --recursive --acl public-read ./www s3://myawsbucket-01155187731/
 # aws s3 cp --recursive --acl public-read ./build s3://myawsbucket-768300774983/

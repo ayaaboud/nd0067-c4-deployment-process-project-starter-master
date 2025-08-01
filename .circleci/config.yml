@@ -50,7 +50,16 @@ jobs:
       - run:
           name: Set environment variables on EB
           command: |
-            eb setenv POSTGRES_HOST=$POSTGRES_HOST POSTGRES_DB=$POSTGRES_DB POSTGRES_USER=$POSTGRES_USER POSTGRES_PASSWORD=$POSTGRES_PASSWORD JWT_SECRET=$JWT_SECRET AWS_BUCKET=$AWS_BUCKET AWS_REGION=$AWS_REGION
+            cd udagram/udagram-api
+            eb setenv \
+              POSTGRES_HOST=$POSTGRES_HOST \
+              POSTGRES_DB=$POSTGRES_DB \
+              POSTGRES_USER=$POSTGRES_USER \
+              POSTGRES_PASSWORD=$POSTGRES_PASSWORD \
+              JWT_SECRET=$JWT_SECRET \
+              AWS_BUCKET=$AWS_BUCKET \
+              AWS_REGION=$AWS_REGION
+
       - run:
           name: Deploy Backend
           command: cd udagram/udagram-api && npm run deploy
